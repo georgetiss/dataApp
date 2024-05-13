@@ -1,0 +1,23 @@
+GWENDOLEN
+
+:name: agent
+
+:Initial Beliefs:
+
+
+:Initial Goals:
+
+:Plans:
++.received(:tell, B) : {True} <- +B;
+
++request(X) : {True} <- +!data_requirement(X) [perform];
+
++!data_requirement(full_name) [perform] : {True} <- +change(marital_status), .send(user, :perform, change(full_name));
+
++!data_requirement(marital_status) [perform] : {True} <- +decline(marital_status), .send(user, :perform, decline(marital_status));
+
++!data_requirement(gps) [perform] : {B request(home_address)} <- +decline(gps), .send(user, :perform, decline(gps));
+
++!data_requirement(X) [perform] : {True} <- +approve(X), .send(user, :perform, approve(X));
+
+

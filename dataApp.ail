@@ -1,0 +1,9 @@
+mas.file = /src/examples/dataApp/dataApp.gwen
+mas.builder = gwendolen.GwendolenMASBuilder
+
+env = dataApp.dataAppEnv
+
+//log.info = ail.mas.DefaultEnvironment
+log.format = brief
+//log.fine = ail.semantics.AILAgent
+//pretty = ail
